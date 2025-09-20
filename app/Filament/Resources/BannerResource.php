@@ -11,6 +11,7 @@ use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
+use Filament\Notifications\Notification;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\ImageColumn;
@@ -112,7 +113,12 @@ class BannerResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                // Tables\Actions\DeleteAction::make(),
+                Tables\Actions\DeleteAction::make()->successNotification(
+                    Notification::make()
+                        ->success()
+                        ->title('Banner deleted')
+                        ->body('The banner has been deleted successfully.')
+                ),
             ]);
         // ->bulkActions([
         //     Tables\Actions\BulkActionGroup::make([

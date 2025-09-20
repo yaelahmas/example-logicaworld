@@ -12,6 +12,7 @@ use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Notifications\Notification;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\ImageColumn;
@@ -101,7 +102,12 @@ class TestimonialResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                // Tables\Actions\DeleteAction::make(),
+                Tables\Actions\DeleteAction::make()->successNotification(
+                    Notification::make()
+                        ->success()
+                        ->title('Testimonial deleted')
+                        ->body('The testimonial has been deleted successfully.')
+                ),
             ]);
         // ->bulkActions([
         //     Tables\Actions\BulkActionGroup::make([

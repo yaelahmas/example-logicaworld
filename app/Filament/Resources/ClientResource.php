@@ -79,12 +79,12 @@ class ClientResource extends Resource
                         ->title('Client updated')
                         ->body('The client has been updated successfully.')
                 ),
-                // Tables\Actions\DeleteAction::make()->successNotification(
-                //     Notification::make()
-                //         ->success()
-                //         ->title('Client deleted')
-                //         ->body('The client has been deleted successfully.')
-                // ),
+                Tables\Actions\DeleteAction::make()->successNotification(
+                    Notification::make()
+                        ->success()
+                        ->title('Client deleted')
+                        ->body('The client has been deleted successfully.')
+                ),
             ]);
         // ->bulkActions([
         //     BulkActionGroup::make([

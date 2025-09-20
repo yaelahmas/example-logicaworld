@@ -75,12 +75,12 @@ class CategoryResource extends Resource
                         ->title('Category updated')
                         ->body('The category has been updated successfully.')
                 ),
-                // Tables\Actions\DeleteAction::make()->successNotification(
-                //     Notification::make()
-                //         ->success()
-                //         ->title('Category deleted')
-                //         ->body('The category has been deleted successfully.')
-                // ),
+                Tables\Actions\DeleteAction::make()->successNotification(
+                    Notification::make()
+                        ->success()
+                        ->title('Category deleted')
+                        ->body('The category has been deleted successfully.')
+                ),
             ]);
         // ->bulkActions([
         //     Tables\Actions\BulkActionGroup::make([

@@ -63,12 +63,12 @@ class TagResource extends Resource
                         ->title('Tag updated')
                         ->body('The tag has been updated successfully.')
                 ),
-                // Tables\Actions\DeleteAction::make()->successNotification(
-                //     Notification::make()
-                //         ->success()
-                //         ->title('Tag deleted')
-                //         ->body('The tag has been deleted successfully.')
-                // ),
+                Tables\Actions\DeleteAction::make()->successNotification(
+                    Notification::make()
+                        ->success()
+                        ->title('Tag deleted')
+                        ->body('The tag has been deleted successfully.')
+                ),
             ]);
         // ->bulkActions([
         //     Tables\Actions\BulkActionGroup::make([
